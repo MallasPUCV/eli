@@ -214,6 +214,7 @@ h1 {
 .course.ing.locked,
 .course.fin.locked,
 .course.der.locked,
+.course.icm.locked,
 .course.rosado.locked,
 .course.opt.locked {
     background-color: #000000 !important;
@@ -230,6 +231,7 @@ h1 {
 .course.ing.approved,
 .course.fin.approved,
 .course.der.approved,
+.course.icm.approved,
 .course.rosado.approved,
 .course.opt.approved {
     border-left-color: #2ecc71 !important;
