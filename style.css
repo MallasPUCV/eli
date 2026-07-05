@@ -164,6 +164,11 @@ h1 {
     border-left: 6px solid #9b59b6;
 }
 
+.course.icm {
+    background-color: #4b256b !important;
+    border-left: 6px solid #9b59b6;
+}
+
 /* FIS - Rojo */
 .course.fis {
     background-color: #5a1f1f !important;
