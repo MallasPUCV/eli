@@ -18,7 +18,7 @@ const semesters = {
         { code: "FIS1141", name: "Fisica General: Ondas y Termodinamica", prereq: ["FIS1001"], credits: 3 },
         { code: "MAT1003", name: "Cálculo en Varias Variables", prereq: ["MAT1002"], credits: 4 },
         { code: "MAT1005", name: "Ecuaciones Diferenciales", prereq: ["MAT1004"], credits: 4 },
-        { code: "IER020", name: "Etica Cristiana", prereq: [], credits: 4 }
+        { code: "IER020", name: "Etica Cristiana", prereq: [], credits: 2 }
     ],
     4: [
         { code: "EIE211", name: "Estadistica y Probabilidades Para Ingeniería", prereq: ["MAT1002"], credits: 3 },
