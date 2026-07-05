@@ -1,0 +1,327 @@
+/* ===== MODO OSCURO GLOBAL ===== */
+body {
+    background-color: #0e0e0e;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+/* ===== BOTÓN CAMBIO DE MALLA ===== */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 10px 0;
+}
+
+.malla-button {
+    background: linear-gradient(135deg, #2196f3, #1565c0);
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.malla-button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.15);
+}
+
+/* ===== GRID ===== */
+#grid {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    gap: 16px;
+}
+
+
+/* ===== RAMOS ===== */
+.course {
+    background-color: #1a1a1a;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px #000;
+    cursor: pointer;
+    border-left: 5px solid #444;
+    color: #ffffff !important;
+    transition: transform 0.15s ease, filter 0.15s ease;
+
+    position: relative; /* 🔥 FIX CRÍTICO */
+}
+
+.course:hover {
+    filter: brightness(1.15);
+    transform: scale(1.02);
+}
+
+/* ===== RAMOS APROBADOS ===== */
+.course.approved {
+    opacity: 0.95;
+    animation: approvedPop 0.25s ease-out;
+}
+
+/* ✔ Check verde */
+.course.approved::before {
+    content: "✔";
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #2ecc71;
+    text-shadow: 0 0 6px #2ecc71;
+    pointer-events: none;
+}
+
+/* Línea roja horizontal */
+.course.approved::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #ff2b2b;
+    transform: translateY(-50%);
+    pointer-events: none;
+    border-radius: 3px;
+    box-shadow: 0 0 6px #ff2b2b;
+}
+
+/* Animación aprobado */
+@keyframes approvedPop {
+    0% {
+        transform: scale(0.95);
+        filter: brightness(0.8);
+    }
+    60% {
+        transform: scale(1.04);
+        filter: brightness(1.2);
+    }
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+}
+
+/* ===== BLOQUEADOS ===== */
+.course.locked {
+    background-color: #000000 !important;
+    border-left: 5px solid #333 !important;
+    color: #777 !important;
+    cursor: not-allowed;
+    opacity: 0.85;
+}
+
+/* ===== SEMESTRES ===== */
+.semester {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #121212;
+    border: 1px solid #222;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.semester h2 {
+    text-align: center;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+/* ===== COLORES POR SIGLA ===== */
+
+/* MAT - Azul */
+.course.mat {
+    background-color: #1e3a5f !important;
+    border-left: 6px solid #2196f3;
+}
+
+/* EIE - Verde */
+.course.eie {
+    background-color: #1f4d3a !important;
+    border-left: 6px solid #4caf50;
+}
+
+/* EII - Café */
+.course.eii {
+    background-color: #4a3624 !important;
+    border-left: 6px solid #8d6e63;
+}
+
+/* QUI - Morado */
+.course.qui {
+    background-color: #4b256b !important;
+    border-left: 6px solid #9b59b6;
+}
+
+/* FIS - Rojo */
+.course.fis {
+    background-color: #5a1f1f !important;
+    border-left: 6px solid #e74c3c;
+}
+
+/* ING - Amarillo */
+.course.ing {
+    background-color: #5c4b1e !important;
+    border-left: 6px solid #f1c40f;
+}
+
+/* FIN - Naranjo */
+.course.fin {
+    background-color: #6b3b12 !important;
+    border-left: 6px solid #ff9800;
+}
+
+/* DER - Gris */
+.course.der {
+    background-color: #2b2b2b !important;
+    border-left: 6px solid #9e9e9e;
+}
+
+/* RAMOS FORMACIÓN - Rosado */
+.course.rosado {
+    background-color: #6b2b4a !important;
+    border-left: 6px solid #ff6fae;
+}
+
+/* OPT - Turquesa */
+.course.opt {
+    background-color: #1f5e5a !important;
+    border-left: 6px solid #1abc9c;
+}
+
+/* ===== BLOQUEADOS POR SIGLA ===== */
+.course.mat.locked,
+.course.eie.locked,
+.course.eii.locked,
+.course.qui.locked,
+.course.fis.locked,
+.course.ing.locked,
+.course.fin.locked,
+.course.der.locked,
+.course.rosado.locked,
+.course.opt.locked {
+    background-color: #000000 !important;
+    border-left-color: #333 !important;
+    color: #777 !important;
+}
+
+/* ===== APROBADOS POR SIGLA ===== */
+.course.mat.approved,
+.course.eie.approved,
+.course.eii.approved,
+.course.qui.approved,
+.course.fis.approved,
+.course.ing.approved,
+.course.fin.approved,
+.course.der.approved,
+.course.rosado.approved,
+.course.opt.approved {
+    border-left-color: #2ecc71 !important;
+}
+
+/* ===== BARRA DE PROGRESO ===== */
+#progress-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 650px;
+    margin: 25px auto 35px auto;
+    text-align: center;
+}
+
+#progress-text {
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+#credits-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #cccccc;
+}
+
+#progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+#progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+    transition: width 0.3s ease;
+}
+
+@media (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* GRID EN MÓVIL */
+    #grid {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        width: 100%;
+        max-width: 100vw;
+        margin: 0 auto;
+        box-sizing: border-box;
+
+        gap: 20px;
+        padding: 10px 12px 20px 12px;
+    }
+
+    /* SEMESTRES (🔑 CLAVE AQUÍ) */
+    .semester {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;          /* 🔥 ESTO LOS CENTRA */
+        box-sizing: border-box;
+    }
+
+    /* RAMOS */
+    .course {
+        font-size: 14px;
+        line-height: 1.35;
+        text-align: center;
+
+        word-break: normal;
+        overflow-wrap: anywhere;
+        hyphens: auto;
+    }
+
+/* SWITCH PRACTICA (IGNORAR, NO TOCADO) */
+    #practice-switch-container {
+        position: relative;
+        top: auto;
+        right: auto;
+
+        margin: 12px auto 0 auto;
+        display: flex;
+        justify-content: center;
+
+        transform: scale(0.9);
+    }
+
+}
