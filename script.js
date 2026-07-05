@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // ===== REGLA PRACTICA PARA EIE620 =====
-        if (course.code === "EIE620" && !practicaAprobada) {
+        if (course.code === "EIE630" && !practicaAprobada) {
             return false;
         }
 
