@@ -209,6 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (course.code.startsWith("MAT")) div.classList.add("mat");
                 if (course.code.startsWith("EIE")) div.classList.add("eie");
+                if (course.code.startsWith("ICM")) div.classList.add("icm");
                 if (course.code.startsWith("QUI")) div.classList.add("qui");
                 if (course.code.startsWith("FIS")) div.classList.add("fis");
                 if (course.code.startsWith("ING")) div.classList.add("ing");
